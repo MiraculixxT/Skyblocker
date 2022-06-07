@@ -63,7 +63,7 @@ public class ItemRegistry {
             Path path = ITEM_LIST_DIR.resolve(file.getName());
             try {
                 String fileContent = Files.readString(path);
-                jsonObjs.add(JsonParser.parseString(fileContent).getAsJsonObject());
+                jsonObjs.add(new JsonParser().parse(fileContent).getAsJsonObject());
             } catch (Exception e) {
                 e.printStackTrace();
             }

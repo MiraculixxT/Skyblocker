@@ -21,7 +21,7 @@ public class ItemStackBuilder {
 
     public static void init() {
         try {
-            petNums = JsonParser.parseString(Files.readString(PETNUMS_PATH)).getAsJsonObject();
+            petNums = new JsonParser().parse(Files.readString(PETNUMS_PATH)).getAsJsonObject();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -48,7 +48,7 @@ public abstract class HandledScreenMixin extends Screen {
     @Inject(at = @At("HEAD"), method = "keyPressed", cancellable = true)
     public void keyPressed(int keyCode, int scanCode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
         if (this.focusedSlot != null){
-            if (keyCode != 256 && !this.client.options.inventoryKey.matchesKey(keyCode, scanCode)){
+            if (keyCode != 256 && !this.client.options.keyInventory.matchesKey(keyCode, scanCode)){
                 if (WikiLookup.wikiLookup.matchesKey(keyCode, scanCode)) WikiLookup.openWiki(this.focusedSlot);
             }
         }

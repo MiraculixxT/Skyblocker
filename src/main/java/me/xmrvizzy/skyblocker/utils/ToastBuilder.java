@@ -27,8 +27,8 @@ public class ToastBuilder implements Toast {
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
 
         manager.drawTexture(matrices, 0, 0, 0, 0, this.getWidth(), this.getHeight());
-        manager.getClient().textRenderer.draw(matrices, title, 7.0f, 7.0f, -11534256);
-        manager.getClient().textRenderer.draw(matrices, description, 7.0f, 18.0f, -16777216);
+        manager.getGame().textRenderer.draw(matrices, title, 7.0f, 7.0f, -11534256);
+        manager.getGame().textRenderer.draw(matrices, description, 7.0f, 18.0f, -16777216);
         return startTime >= 3000L ? Toast.Visibility.HIDE : Toast.Visibility.SHOW;
     }
 }

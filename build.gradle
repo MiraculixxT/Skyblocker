@@ -6,8 +6,8 @@ plugins {
 
 import com.modrinth.minotaur.dependencies.ModDependency
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
+sourceCompatibility = JavaVersion.VERSION_16
+targetCompatibility = JavaVersion.VERSION_16
 
 archivesBaseName = project.archives_base_name
 version = "${project.mod_version}+${project.suported_version}"
@@ -62,7 +62,7 @@ dependencies {
 
 	include(modImplementation ("meteordevelopment:discord-ipc:1.1"))
 	//  allow gson to deserialize the api data into a record
-	include(implementation("com.github.Marcono1234:gson-record-type-adapter-factory:0.2.0"))
+	include(modImplementation("com.github.Marcono1234:gson-record-type-adapter-factory:0.2.0"))
 }
 
 processResources {
@@ -81,7 +81,7 @@ tasks.withType(JavaCompile).configureEach {
 
 
 	// Minecraft 1.18 upwards uses Java 17.
-	it.options.release = 17
+	it.options.release = 16
 }
 
 java {
